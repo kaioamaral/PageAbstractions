@@ -4,6 +4,7 @@
     {
         Id,
         Name,
-        CssSelector
+        CssSelector,
+        TagName
     }
 }

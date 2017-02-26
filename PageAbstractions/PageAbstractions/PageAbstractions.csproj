@@ -50,7 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enumerators\Locator.cs" />
-    <Compile Include="Page.cs" />
+    <Compile Include="Abstractions\Page.cs" />
+    <Compile Include="LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
