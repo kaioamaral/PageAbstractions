@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using PageAbstractions.Core;
+using PageAbstractions.Core.Templates;
 using PageAbstractions.Core.Enumerators;
 using System;
 using System.Linq;

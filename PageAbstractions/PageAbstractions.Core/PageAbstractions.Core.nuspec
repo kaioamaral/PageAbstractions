@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>PageAbstractions.Core</id>
+    <version>1.0.0.4</version>
+    <title>Page Abstractions</title>
+    <authors>Kaio Amaral</authors>
+    <owners>Kaio Amaral</owners>
+    <licenseUrl>https://github.com/kaioamaral/PageAbstractions/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/kaioamaral/PageAbstractions</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Page Abstractions for WebPages testing pattern</description>
+    <releaseNotes>dll problem corrected</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Selenium Tests</tags>
+  
+    <dependencies>
+      <dependency id="Faker" version="1.0.0.0" />
+      <dependency id="Selenium.WebDriver" version="3.2.0.0" />
+      <dependency id="Selenium.Support" version="3.2.0.0" />
+    </dependencies>
+  </metadata>
+</package>

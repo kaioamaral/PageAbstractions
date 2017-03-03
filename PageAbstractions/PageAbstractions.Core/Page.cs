@@ -5,7 +5,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace PageAbstractions.Core.Abstractions
+namespace PageAbstractions.Core
 {
     public abstract class Page
     {

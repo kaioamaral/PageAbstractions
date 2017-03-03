@@ -53,14 +53,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstractions\Page.cs" />
+    <Compile Include="Page.cs" />
     <Compile Include="Enumerators\Locator.cs" />
-    <Compile Include="LoginPage.cs" />
+    <Compile Include="Templates\LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterPage.cs" />
+    <Compile Include="Templates\RegisterPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="PageAbstractions.Core.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

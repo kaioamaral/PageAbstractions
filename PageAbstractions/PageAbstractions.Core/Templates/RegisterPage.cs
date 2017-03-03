@@ -1,13 +1,8 @@
-﻿using PageAbstractions.Core.Abstractions;
+﻿using OpenQA.Selenium;
 using PageAbstractions.Core.Enumerators;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
 
-namespace PageAbstractions.Core
+namespace PageAbstractions.Core.Templates
 {
     public class RegisterPage : Page
     {
