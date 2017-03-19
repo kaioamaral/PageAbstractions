@@ -1,9 +1,8 @@
 ﻿using OpenQA.Selenium;
-using PageAbstractions.Core.Abstractions;
 using PageAbstractions.Core.Enumerators;
 using System;
 
-namespace PageAbstractions.Core
+namespace PageAbstractions.Core.Templates
 {
     public class LoginPage : Page
     {
