@@ -63,7 +63,7 @@ namespace PageAbstractions.Core
             return this;
         }
 
-        public void Done(string targetButton, Locator locator)
+        public void SubmitByClickingIn(string targetButton, Locator locator)
         {
             base.Click(targetButton, locator);
         }
