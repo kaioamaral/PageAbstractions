@@ -58,7 +58,13 @@ namespace PageAbstractions.Core.Templates
             return this;
         }
 
-        public void SubmitByClickingIn(string targetButton, Locator locator)
+        public RegisterPage UploadProfilePicture(string filePath)
+        {
+            base.UploadFile(filePath);
+            return this;
+        }
+
+        public void ClickToSubmit(string targetButton, Locator locator)
         {
             base.Click(targetButton, locator);
         }

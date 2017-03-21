@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using PageAbstractions.Core.Templates;
 using PageAbstractions.Core.Enumerators;
+using PageAbstractions.Core.Templates;
 using PageAbstractions.UseCases.Tests.Abstractions;
 using System;
 using System.Linq;
@@ -24,14 +24,18 @@ namespace PageAbstractions.UseCases.Tests
         }
 
         [Test]
-        public void ICanRegister(string email = "test@test.com", string password = "Teste@1234")
+        public void ICanRegister()
         {
+            string email = "test@test.com";
+            string password = "Teste@1234";
+
             this
                 .registerPage
                 .FillEmail("Email", email, Locator.Id)
                 .FillPassword("Password", password, Locator.Id)
                 .ConfirmPassword("ConfirmPassword", Locator.Id)
-                .SubmitByClickingIn("input[type='submit']", Locator.CssSelector);
+                .UploadProfilePicture("C:/users/kaio/images/KAIO.jpg")
+                .ClickToSubmit("input[type='submit']", Locator.CssSelector);
 
             Assert.NotNull(registerPage.Find("a[title='Manage']", Locator.CssSelector));
         }
@@ -44,7 +48,7 @@ namespace PageAbstractions.UseCases.Tests
                 .FillEmail("Email", Locator.Id)
                 .FillPassword("Password", "foo", Locator.Id)
                 .ConfirmPassword("ConfirmPassword", Locator.Id)
-                .SubmitByClickingIn("input[type='submit']", Locator.CssSelector);
+                .ClickToSubmit("input[type='submit']", Locator.CssSelector);
 
             Assert.NotZero(registerPage.FindAnyWhichMatches("li", Locator.TagName,
                 (e) => e.Text == "The Password must be at least 6 characters long.").Count());
@@ -61,7 +65,7 @@ namespace PageAbstractions.UseCases.Tests
                 .FillEmail("Email", Locator.Id)
                 .FillPassword("Password", "testeteste", Locator.Id)
                 .ConfirmPassword("ConfirmPassword", Locator.Id)
-                .SubmitByClickingIn("input[type='submit']", Locator.CssSelector);
+                .ClickToSubmit("input[type='submit']", Locator.CssSelector);
 
             string expectedMessage = "Passwords must have at least one non letter or digit character. Passwords must have at least one digit ('0'-'9'). Passwords must have at least one uppercase ('A'-'Z').";
 
@@ -80,7 +84,7 @@ namespace PageAbstractions.UseCases.Tests
                 .FillEmail("Email", Locator.Id)
                 .FillPassword("Password", "testeteste", Locator.Id)
                 .ConfirmPassword("ConfirmPassword", Locator.Id)
-                .SubmitByClickingIn("input[type='submit']", Locator.CssSelector);
+                .ClickToSubmit("input[type='submit']", Locator.CssSelector);
 
             string expectedMessage = "The password and confirmation password do not match.";
              
@@ -99,7 +103,7 @@ namespace PageAbstractions.UseCases.Tests
                 .FillUsername("Email", Locator.Id)
                 .FillPassword("Password", Locator.Id)
                 .ConfirmPassword("ConfirmPassword", Locator.Id)
-                .SubmitByClickingIn("input[type='submit']", Locator.CssSelector);
+                .ClickToSubmit("input[type='submit']", Locator.CssSelector);
             
             Assert.NotZero(registerPage.FindAnyWhichMatches("li", Locator.TagName,
                 (e) => e.Text == "O campo Email não é um endereço de email válido.").Count());

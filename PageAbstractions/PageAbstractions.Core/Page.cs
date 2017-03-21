@@ -15,6 +15,7 @@ namespace PageAbstractions.Core
         public Page(IWebDriver driver, TimeSpan defaultTimeSpan)
         {
             this.driver = driver;
+            
             this.defaultTimeSpan = defaultTimeSpan;
         }
 
@@ -53,6 +54,7 @@ namespace PageAbstractions.Core
         public Page SelectByTextIn(string element, string text, Locator locator)
         {
             new SelectElement(Find(element, locator)).SelectByText(text);
+
             return this;
         }
 
@@ -68,11 +70,17 @@ namespace PageAbstractions.Core
             return this;
         }
 
+        public Page UploadFile(string filePath)
+        {
+            driver.FindElement(By.CssSelector("input[type='file']")).SendKeys(filePath);
+            return this;
+        }
+
         public void Click(string element, Locator locator)
         {
             driver.FindElement(BuildWayToFind(element, locator)).Click();
         }
-
+        
         public void Dispose()
         {
             if (this.driver == null) return;

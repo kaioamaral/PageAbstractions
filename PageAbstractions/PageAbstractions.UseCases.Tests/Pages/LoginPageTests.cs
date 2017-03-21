@@ -1,13 +1,9 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
-using PageAbstractions.Core;
 using PageAbstractions.Core.Enumerators;
+using PageAbstractions.Core.Templates;
 using PageAbstractions.UseCases.Tests.Abstractions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PageAbstractions.UseCases.Tests
 {
@@ -31,11 +27,12 @@ namespace PageAbstractions.UseCases.Tests
                 new ChromeDriver(base.chromeDriverDirectory),
                 TimeSpan.FromSeconds(10));
 
-            registerPage.FillEmail("Email", Locator.Id)
+            registerPage
+                .FillEmail("Email", Locator.Id)
                 .FillPassword("Password", Locator.Id)
                 .ConfirmPassword("Password", Locator.Id)
-                .SubmitByClickingIn("input[type='submit'", Locator.CssSelector);
-
+                .ClickToSubmit("input[type='submit'", Locator.CssSelector);
+            
             loginPage = new LoginPage(
                 new ChromeDriver(base.chromeDriverDirectory), 
                 TimeSpan.FromSeconds(10),
